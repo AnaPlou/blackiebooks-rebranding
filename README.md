@@ -1,6 +1,6 @@
 ## Descripción 🏝
 
-Proyecto de rediseño visual y maquetación web de la página de la editorial Blackie Books. 
+☺️ Pequeño proyecto para el módulo de Desarrollo Web en Trazos. He realizado un rediseño visual, con su posterior maquetación web, de la página de la editorial Blackie Books. La idea es mantener su identidad corporativa, con los clásicos negros y su tipografía, pero ampliando los espacios entre secciones y dándole más protagonismo al libro mediante la reorganización de los pesos de los textos. 
 
 
 ## Autor ✒️
