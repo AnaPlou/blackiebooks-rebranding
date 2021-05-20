@@ -1,0 +1,1083 @@
+@import '_variables' , '_reset' , '_mixins';
+
+// Header
+
+.header {
+    width: 100%;
+    background-color: var(--negro);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &__centrado {
+        width: 80%;
+        max-width: 1100px;
+        margin: auto;
+        @include flex ( row , wrap , space-between , center);
+    }
+    &__icon {
+        color: white;
+        display: none;
+        @media screen and (max-width: 700px){
+            display: flex;
+        }
+    }
+    &__logo {
+        margin: .5em;
+        max-width: 50px;
+        cursor: pointer;
+    }
+    &__menu {
+        width: 30em;
+        color:var(--blanco);
+        @include flex ( row , wrap , space-between , center);
+        position:relative;
+        @media screen and (max-width: 1000px){
+            display: none;
+        }
+    }
+    &__li {
+        color: var(--blanco);
+    }
+    &__a {
+        font-family: 'Roboto Slab', serif;
+        font-size: .8em;
+        font-weight: 400;
+        position: relative;
+    }
+    &__li &__a::after {
+        content: '';
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        
+        width: 100%;
+        height: 1.4px;
+        background-color: var(--blanco);
+    
+        transition: all .4s ease;
+        transform: scaleX(0);
+        transform-origin: center;
+    }
+    &__li:hover &__a::after {
+        transform: scaleX(1);
+    }
+    &__little {
+        max-width: 65px;
+        cursor: pointer;
+        transition: all .3s ease;
+        transform: scale(1);
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    &__user {
+        width: 4em;
+        color: var(--blanco);
+        cursor: pointer;
+        @include flex ( row , wrap , space-between , center);
+        @media screen and (max-width: 1000px){
+            width: 1em;
+        }
+    }
+    &__profile__fill{
+        color: var(--grisclaro);
+        transition: all .3s ease;
+        transform: scale(1);
+        &:hover{
+            color: var(--blanco);
+            transform: scale(1.1);
+        }
+        @media screen and (max-width: 1000px){
+            display: none;
+        }
+    }
+    &__cart__fill{
+        transform: scale(1);
+        color: var(--grisclaro);
+        transition: all .3s ease;
+        &:hover {
+            color: var(--blanco);
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Index
+
+.index {
+
+    // Main
+
+    .main {
+        overflow: hidden;
+    }
+
+    // Slider
+
+    .slider {
+        margin-top: 4em;
+        margin-bottom: 2em;
+        position: relative;
+        overflow: hidden;
+
+        &__grande {
+            width: 300%;
+            @include flex (row, nowrap, flex-start, center);
+            transition: all .6s ease;
+            @media screen and (max-width: 700px){
+                display: none;
+            }
+        }
+        &__img {
+            width: calc(100% / 3);
+        }
+        &__pequeno {
+            width: 300%;
+            @include flex (row, wrap, flex-start, center);
+            transition: all .6s ease;
+            display: none;
+            @media screen and (max-width: 700px){
+                display: flex;
+            }
+        }
+        &__arrow{
+            height: 100%;
+            padding: .5em;
+            background-color: rgba($color: #ffffff, $alpha: .3);
+            color: var(--grisoscuro);
+            position: absolute;
+            top: 0;
+            cursor:pnter;
+            @media screen and (max-width: 1000px){
+                height: 3em;
+                top: calc(50% - 1.5em);
+            }
+            transition: all 1s ease;
+        
+            &.siguiente {right: 0;}
+            &.anterior {left: 0;}
+
+            &:hover{
+            background-color: rgba($color: white, $alpha: .8);
+            }
+        }
+    }
+    // Search
+
+    .search {
+        width: 100%;
+        padding: 2em 0em;
+        &__centrado {
+            width: 30em;
+            margin: auto;
+            @media screen and (max-width: 1000px){
+                width: 18em;
+            }
+        }
+        &__form{
+            @include flex (row, wrap, space-between, center);
+            padding: .85em 1.5em .85em 1.5em;
+            border-radius: 2em;
+            border: 1px solid var(--grisclaro);
+        }
+        [type="text"] {
+            width: 93%;
+            font-size: .85em;
+            font-weight: 400;
+            color: var(--grisoscuro);
+        }
+        &__icon {
+            color: var(--grisclaro);
+            cursor: pointer;
+            transition: all .4s ease;
+            &:hover{
+                color: var(--grisoscuro);
+            }
+        }
+    }
+
+    // Grid
+
+    .grid {
+        width: 100%;
+        padding: 3em 0em 2em 0em;
+
+        &__centrado {
+            width: 80%;
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat( auto-fit , minmax( 240px , 1fr));
+        }
+        &__libro {
+            @include flex (column, wrap, center, center);
+            margin: 0em 1em 5em 0em; 
+        }
+        &__img{
+            cursor: pointer; 
+            max-width: 170px;
+            transform: scale(1);
+            transition: all .4s ease;
+            &:hover{
+                transform: scale(1.07);
+                filter: drop-shadow(2px 2px 4px rgba(95, 95, 95, .4));
+            }
+        }
+        &__txt {
+            @include flex (column, wrap, center, center);
+            margin-top: 1em;
+            color: var(--grisoscuro);
+            cursor: pointer;
+        }
+        &__h2{
+            font-family: 'Roboto Slab', serif;
+            font-size: .85em;
+        }
+        &__h3{
+            margin: .3em 0em .5em 0em;
+            font-family: 'Roboto Slab', serif;
+            font-size: 1em;
+            font-weight: 600;
+        }
+        &__h4{
+            font-size: .85em;
+        }
+        &__boton {
+            cursor: pointer; 
+        }
+        &__comprar {
+            border-radius: 2em;
+            border: 1px solid var(--morado-comprar);
+
+            color: var(--morado-comprar);
+            font-size: .8em; 
+
+            margin-top: 1em;
+            padding: .6em 1.7em;
+
+            transition: all .4s ease;
+
+            &:hover {
+                background-color: var(--morado-comprar);
+                color: var(--blanco); 
+            }
+        }
+        &__reservar {
+            border-radius: 2em;
+            border: 1px solid var(--amarillo-reservar);
+
+            color: var(--amarillo-reservar);
+            font-size: .8em; 
+
+            margin-top: 1em;
+            padding: .7em 1.7em;
+
+            transition: all .4s ease;
+
+            &:hover {
+                background-color: var(--amarillo-reservar);
+                color: var(--blanco); 
+            }
+        }
+    }
+
+    // Eventos
+
+    .eventos {
+        padding-bottom: 5em;
+        &__centrados {
+            width: 80%;
+            max-width: 1100px;
+            margin: auto;
+        }
+        &__titulo {
+            background-color: var(--negro);
+            border-radius: .7em .7em .7em .7em;
+            padding: 1em;
+            margin-bottom: 5em; 
+            cursor: pointer;
+        }
+        &__title {
+            max-width: 200px;
+            margin: auto;
+        }
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat( auto-fit , minmax( 250px , 1fr));
+            gap: 3em;
+        }
+        &__evento {
+            @include flex (column, wrap, flex-start, center);
+            transform: scale(1);
+            transition: all .4s ease;
+            &:hover{
+                transform: scale(1.05);
+                filter: drop-shadow(2px 2px 4px rgba(134, 134, 134, 0.2));
+            }
+        }
+        &__img {
+            cursor: pointer;
+            border-radius: .7em .7em 0em 0em;
+        }
+        &__txt{
+            background-color: rgb(248, 248, 248);
+            color: var(--grisoscuro);
+            padding: 1.6em;
+            border-radius: 0em 0em .7em .7em;
+            cursor: pointer;
+        }
+        &__h2 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 1em;
+        }
+        &__fecha {
+            @include flex (row, wrap, flex-start, center);
+            margin-bottom: .5em;
+        }
+        &__direccion {
+            @include flex (row, wrap, flex-start, center);
+            margin-bottom: 1.5em;
+            cursor: pointer;
+        }
+        &__descripcion{
+            @include flex (column, wrap, flex-start, flex-start);
+        }
+        &__h4{
+            font-size: .9em;
+            font-weight: 600;
+            margin-bottom: .5em;
+            cursor: pointer;
+        }
+        &__h3{
+            font-size: .85em;
+            color: var(--gristexto);
+            line-height: 1.5em;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        &__icon {
+            margin-right: .5em;
+            color: var(--grisoscuro);
+
+            display: flex;
+        }
+    }
+
+    // Suscribete
+
+    .suscribete {
+        width: 100%;
+        margin-bottom: 5em; 
+        &__centrado {
+            width: 80%;
+            max-width: 1100px;
+            margin: auto; 
+            padding: 1.5em 1.5em 1.5em 1.5em;
+            border-radius: .7em .7em .7em .7em;
+            background-color: var(--negro);
+            @include flex (column, wrap, center, center);
+        }
+        &__img{
+            max-width: 500px;
+            @media screen and (max-width: 1000px){
+                max-width: 250px;
+            }
+        }
+        &__h3 {
+            width: 40em;
+            margin-top: 1.5em; 
+            margin-bottom: 1.5em; 
+            color: var(--blanco);
+            font-family: 'Roboto Slab', serif;
+            font-size: .9em;
+            text-align: center;
+            line-height: 1.6em;
+            @media screen and (max-width: 600px){
+                margin-bottom: 1em;
+                width: 17em;
+            }
+        }
+        &__boton {
+            cursor: pointer; 
+            border-radius: 2em;
+            border: 1px solid var(--rosa-banner);
+            color: var(--rosa-banner);
+            font-size: .8em; 
+            margin-top: 1em;
+            padding: .6em 1.7em;
+            transition: all .4s ease;
+            &:hover {
+                background-color: var(--rosa-banner);
+                color: var(--blanco); 
+            }
+        }
+    }
+}
+
+// Book01
+
+.book01 {
+
+    // Main
+
+    .main {
+        overflow: hidden;
+        @include flex (column, wrap, space-between, flex-start);
+    }
+
+    // Libro
+
+    .libro {
+        width: 100%;
+        margin-bottom: 5em; 
+        &__centrado {
+            max-width: 1100px;
+            width: 80%;
+            margin: auto;
+            padding: 7em 0em 0em;
+            @include flex (row, wrap, space-between, flex-start);
+
+            @media screen and (max-width: 700px){
+                @include flex (column, wrap, space-between, flex-start);
+                padding: .5em 0em 0em;
+            }
+        }
+        &__portada {
+            width: calc(100% / 2 - 8em);
+            padding: 0em 0em 0em 1.5em;                
+            @include flex (row, wrap, flex-start, flex-start);
+            @media screen and (max-width: 700px) {
+                @include flex (row, wrap, center, center);
+                width: 100%;
+                padding: 7em 0em 0em 0em;  
+            }
+        }
+        &__atras {
+            margin-right: 2em;
+            transition: all .4s ease;
+            color: var(--grisclaro);
+            @media screen and (max-width: 700px) {
+                display: none;
+            }
+            &:hover {
+                color: var(--negro);
+            }
+        }
+        &__img {
+            cursor:pointer;
+            max-width: 250px;
+            filter: drop-shadow(-5px 5px 10px rgba(95, 95, 95, .4));
+            margin-bottom: 1em;
+        }
+        &__descripcion {
+            @include flex (column, wrap, center, center);
+        }
+        .descripcion__h3{
+            font-size: .9em;
+        }
+        .descripcion__h2{
+            font-family: 'Roboto Slab', serif;
+            margin-bottom: .3em;
+            font-size: 1.7em;
+        }
+        &__precio {
+            font-size: 1em;
+            font-weight: 400;
+            margin-bottom: .5em;
+        }
+        &__button {
+            cursor: pointer; 
+            border-radius: 5em;
+            border: 1px solid var(--morado-comprar);
+            color: var(--morado-comprar);
+            font-size: .8em; 
+            margin-top: .5em;
+            padding: .6em 1.7em;
+            transition: all .4s ease;
+            &:hover {
+                background-color: var(--morado-comprar);
+                color: var(--blanco); 
+            }
+        }
+        &__tabs {
+            width: calc(100% / 2 + 8em);
+            @include flex (column, wrap, flex-start, flex-start);
+            @media screen and (max-width: 700px) {
+                width: 100%;
+                padding: 5em 0em 0em 0em; 
+            }
+        }
+        &__pestanas {
+            width: 100%;
+        }
+                .ul {
+                @include flex (row, wrap, space-between, center);
+                .li {
+                    width: calc(100% / 3 - 1em);
+                    padding:1em;
+                    cursor: pointer;
+                    font-size: .8em;
+                    font-weight: 400;
+                    text-align: center;
+
+                    border-radius: 1em;
+                    margin-bottom: 2em; 
+
+                    border: 1px solid rgba($color: #000000, $alpha: .15);
+
+                    &.activo {
+                        border: 1px solid rgba($color: #8445CC, $alpha: .15);
+                        background-color: #8445CC;
+                        color: white;
+                        font-weight: 500;
+                    }
+                }
+            }
+        &__texto {
+            width: 100%;
+            position: relative;
+            font-family: 'Roboto Slab', serif;
+            font-size: .8em;
+            font-weight: 400;
+            line-height: 1.6em;
+            .p {
+                width: 100%;
+                padding: 3em 3em;
+
+                background-color: rgb(245, 245, 245);
+                border-radius: 2em;
+
+                display: none; 
+                transition: all .5s ease;
+                &.activo {
+                    color: black;
+                    display: block; 
+                }
+            }
+        }
+    }
+
+    // Te puede interesar
+
+    .otros {
+        width: 100%;
+        .otros__centrado {
+            width: 80%;
+            margin: auto;
+            max-width: 1100px; 
+            .otros__fila1{
+                width: 100%;
+                background-color: var(--negro);
+                border-radius: .7em .7em .7em .7em;
+                padding: .6em;
+                margin-bottom: 5em; 
+                cursor: pointer;
+                .otros__img {
+                    max-width: 300px;
+                    margin: auto;
+                }
+            }
+            .otros__fila2 {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat( auto-fit , minmax( 240px , 1fr));
+                .otros__libro {
+                    @include flex (column, wrap, center, center);
+                    margin: 0em 1em 5em 0em; 
+                    .grid__img{
+                        cursor: pointer; 
+                        max-width: 170px;
+                        transform: scale(1);
+                        transition: all .4s ease;
+                        &:hover{
+                            transform: scale(1.07);
+                            filter: drop-shadow(2px 2px 4px rgba(95, 95, 95, .4));
+                        }
+                    }
+                    .grid__txt {
+                        @include flex (column, wrap, center, center);
+                        margin-top: 1em;
+                        color: var(--grisoscuro);
+                        cursor: pointer;
+    
+                        .grid__h2{
+                            font-family: 'Roboto Slab', serif;
+                            font-size: .85em;
+                        }
+                        .grid__h3{
+                            margin: .3em 0em .5em 0em;
+                            font-family: 'Roboto Slab', serif;
+                            font-size: 1em;
+                            font-weight: 600;
+                        }
+                        .grid__h4{
+                            font-size: .85em;
+                        }
+                    }
+                    .grid__boton {
+                        cursor: pointer; 
+                        .grid__comprar {
+                            border-radius: 2em;
+                            border: 1px solid var(--morado-comprar);
+    
+                            color: var(--morado-comprar);
+                            font-size: .8em; 
+    
+                            margin-top: 1em;
+                            padding: .6em 1.7em;
+    
+                            transition: all .4s ease;
+    
+                            &:hover {
+                                background-color: var(--morado-comprar);
+                                color: var(--blanco); 
+                            }
+                        }
+                        .grid__reservar {
+                            border-radius: 2em;
+                            border: 1px solid var(--amarillo-reservar);
+    
+                            color: var(--amarillo-reservar);
+                            font-size: .8em; 
+    
+                            margin-top: 1em;
+                            padding: .7em 1.7em;
+    
+                            transition: all .4s ease;
+                
+                            &:hover {
+                                background-color: var(--amarillo-reservar);
+                                color: var(--blanco); 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Suscribete
+
+    .suscribete {
+        width: 100%;
+        margin-bottom: 5em; 
+        &__centrado {
+            width: 80%;
+            max-width: 1100px;
+            margin: auto; 
+            padding: 1.5em 1.5em 1.5em 1.5em;
+            border-radius: .7em .7em .7em .7em;
+            background-color: var(--negro);
+            @include flex (column, wrap, center, center);
+        }
+        &__img{
+            max-width: 500px;
+            @media screen and (max-width: 1000px){
+                max-width: 250px;
+            }
+        }
+        &__h3 {
+            width: 40em;
+            margin-top: 1.5em; 
+            margin-bottom: 1.5em; 
+            color: var(--blanco);
+            font-family: 'Roboto Slab', serif;
+            font-size: .9em;
+            text-align: center;
+            line-height: 1.6em;
+            @media screen and (max-width: 600px){
+                margin-bottom: 1em;
+                width: 17em;
+            }
+        }
+        &__boton {
+            cursor: pointer; 
+            border-radius: 2em;
+            border: 1px solid var(--rosa-banner);
+            color: var(--rosa-banner);
+            font-size: .8em; 
+            margin-top: 1em;
+            padding: .6em 1.7em;
+            transition: all .4s ease;
+            &:hover {
+                background-color: var(--rosa-banner);
+                color: var(--blanco); 
+            }
+        }
+    }
+}
+
+// Book02
+
+.book02 {
+
+    // Main
+
+    .main {
+        overflow: hidden;
+    }
+
+    // Libro
+
+    .libro {
+        width: 100%;
+        margin-bottom: 5em; 
+        &__centrado {
+            max-width: 1100px;
+            width: 80%;
+            margin: auto;
+            @include flex (row, wrap, space-between, flex-start);
+
+            @media screen and (max-width: 700px){
+                @include flex (column, wrap, space-between, flex-start);
+                padding: .5em 0em 0em;
+            }
+        }
+        &__portada {
+            width: calc(100% / 2 - 8em);
+            padding: 7em 0em 0em 1.5em;                
+            @include flex (row, wrap, flex-start, flex-start);
+
+            @media screen and (max-width: 700px) {
+                @include flex (row, wrap, center, center);
+                width: 100%;
+                padding: 7em 0em 0em 0em;  
+            }
+        }
+        &__atras {
+            margin-right: 2em;
+            transition: all .4s ease;
+            color: var(--grisclaro);
+            @media screen and (max-width: 700px) {
+                display: none;
+            }
+            &:hover {
+                color: var(--negro);
+            }
+        }
+        &__img {
+            cursor:pointer;
+            max-width: 250px;
+            filter: drop-shadow(-5px 5px 10px rgba(95, 95, 95, .4));
+            margin-bottom: 1em;
+        }
+        &__descripcion {
+            @include flex (column, wrap, center, center);
+        }
+        .descripcion__h3{
+            font-size: .9em;
+        }
+        .descripcion__h2{
+            font-family: 'Roboto Slab', serif;
+            margin-bottom: .3em;
+            font-size: 1.7em;
+        }
+        &__precio {
+            font-size: 1em;
+            font-weight: 400;
+            margin-bottom: .5em;
+        }
+        &__button {
+            cursor: pointer; 
+            border-radius: 5em;
+            border: 1px solid var(--morado-comprar);
+            color: var(--morado-comprar);
+            font-size: .8em; 
+            margin-top: .5em;
+            padding: .6em 1.7em;
+            transition: all .4s ease;
+            &:hover {
+                background-color: var(--morado-comprar);
+                color: var(--blanco); 
+            }
+        }
+        &__tabs {
+            padding: 7em 0em 0em 0em; 
+            width: calc(100% / 2 + 8em);
+            @include flex (column, wrap, flex-start, flex-start);
+
+            @media screen and (max-width: 700px) {
+                width: 100%;
+                padding: 5em 0em 0em 0em; 
+            }
+        }
+        &__pestanas {
+            width: 100%;
+            .ul {
+                @include flex (row, wrap, space-between, center);
+                .li {
+                    width: calc(100% / 3 - 1em);
+                    padding:1em;
+                    cursor: pointer;
+                    font-size: .8em;
+                    font-weight: 400;
+                    text-align: center;
+
+                    border-radius: 1em;
+                    margin-bottom: 2em; 
+
+                    border: 1px solid rgba($color: #000000, $alpha: .15);
+
+                    &.activo {
+                        border: 1px solid rgba($color: #EF9006, $alpha: .15);
+                        background-color: #EF9006;
+                        color: white;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        &__texto {
+            width: 100%;
+            position: relative;
+            font-family: 'Roboto Slab', serif;
+            font-size: .8em;
+            font-weight: 400;
+            line-height: 1.6em;
+            .p {
+                width: 100%;
+                padding: 3em 3em;
+                cursor: pointer;
+
+                background-color: rgb(245, 245, 245);
+                border-radius: 2em;
+
+                display: none; 
+                transition: all .4s ease;
+                &.activo {
+                    color: black;
+                    display: block; 
+                }
+            }
+        }
+    }
+
+    // Te puede interesar
+
+    .otros {
+        width: 100%;
+        &__centrado {
+            width: 80%;
+            margin: auto;
+            max-width: 1100px; 
+        }
+        &__fila1{
+            width: 100%;
+            background-color: var(--negro);
+            border-radius: .7em .7em .7em .7em;
+            padding: .6em;
+            margin-bottom: 5em; 
+            cursor: pointer;
+        }
+        &__img {
+            max-width: 300px;
+            margin: auto;
+        }
+        &__fila2 {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat( auto-fit , minmax( 240px , 1fr));
+        }
+        &__libro {
+            @include flex (column, wrap, center, center);
+            margin: 0em 1em 5em 0em; 
+            .grid__img{
+                cursor: pointer; 
+                max-width: 170px;
+                transform: scale(1);
+                transition: all .4s ease;
+                &:hover{
+                    transform: scale(1.07);
+                    filter: drop-shadow(2px 2px 4px rgba(95, 95, 95, .4));
+                }
+            }
+            .grid__txt {
+                @include flex (column, wrap, center, center);
+                margin-top: 1em;
+                color: var(--grisoscuro);
+                cursor: pointer;
+
+                .grid__h2{
+                    font-family: 'Roboto Slab', serif;
+                    font-size: .85em;
+                }
+                .grid__h3{
+                    margin: .3em 0em .5em 0em;
+                    font-family: 'Roboto Slab', serif;
+                    font-size: 1em;
+                    font-weight: 600;
+                }
+                .grid__h4{
+                    font-size: .85em;
+                }
+            }
+            .grid__boton {
+                cursor: pointer; 
+                .grid__comprar {
+                    border-radius: 2em;
+                    border: 1px solid var(--morado-comprar);
+
+                    color: var(--morado-comprar);
+                    font-size: .8em; 
+
+                    margin-top: 1em;
+                    padding: .6em 1.7em;
+
+                    transition: all .4s ease;
+
+                    &:hover {
+                        background-color: var(--morado-comprar);
+                        color: var(--blanco); 
+                    }
+                }
+                .grid__reservar {
+                    border-radius: 2em;
+                    border: 1px solid var(--amarillo-reservar);
+
+                    color: var(--amarillo-reservar);
+                    font-size: .8em; 
+
+                    margin-top: 1em;
+                    padding: .7em 1.7em;
+
+                    transition: all .4s ease;
+        
+                    &:hover {
+                        background-color: var(--amarillo-reservar);
+                        color: var(--blanco); 
+                    }
+                }
+            }
+        }
+    }
+
+    // Suscribete
+
+    .suscribete {
+        width: 100%;
+        margin-bottom: 5em; 
+        &__centrado {
+            width: 80%;
+            max-width: 1100px;
+            margin: auto; 
+            padding: 1.5em 1.5em 1.5em 1.5em;
+            border-radius: .7em .7em .7em .7em;
+            background-color: var(--negro);
+            @include flex (column, wrap, center, center);
+        }
+        &__img{
+            max-width: 500px;
+            @media screen and (max-width: 1000px){
+                max-width: 250px;
+            }
+        }
+        &__h3 {
+            width: 40em;
+            margin-top: 1.5em; 
+            margin-bottom: 1.5em; 
+            color: var(--blanco);
+            font-family: 'Roboto Slab', serif;
+            font-size: .9em;
+            text-align: center;
+            line-height: 1.6em;
+            @media screen and (max-width: 600px){
+                margin-bottom: 1em;
+                width: 17em;
+            }
+        }
+        &__boton {
+            cursor: pointer; 
+            border-radius: 2em;
+            border: 1px solid var(--rosa-banner);
+            color: var(--rosa-banner);
+            font-size: .8em; 
+            margin-top: 1em;
+            padding: .6em 1.7em;
+            transition: all .4s ease;
+            &:hover {
+                background-color: var(--rosa-banner);
+                color: var(--blanco); 
+            }
+        }
+    }
+}
+
+// Footer
+
+.footer {
+    width: 100%;
+    background-color: #F0F0F0;
+    &__centrado {
+        width: 80%;
+        margin: auto; 
+        padding: 3em 0em;
+        background-color: #F0F0F0;
+        @include flex (row, wrap, space-between, center);
+    }
+    &__location{
+        @include flex (row, wrap, space-between, center);
+        @media screen and (max-width: 1000px){
+            margin: auto; 
+        }
+    }
+    &__logo {
+        max-width: 100px;
+        margin-right: 1em;
+        cursor: pointer; 
+    }
+    &__direction {
+        @include flex (column, wrap, space-between, flex-start);
+        color: var(--negro);
+    }
+    &__h3 {
+        font-family: 'Roboto Slab', serif;
+        font-size: .8em;
+        font-weight: 800;
+        margin-bottom: .3em;
+    }
+    &__h4 {
+        font-family: 'Roboto Slab', serif;
+        font-size: .8em;
+        font-weight: 400;
+        margin-bottom: .3em;
+    }
+    &__services {
+        @include flex (column, wrap, space-between, flex-start);
+        color: var(--negro);
+        @media screen and (max-width: 1000px){
+            display: none; 
+        }
+    }
+    &__h5 {
+        font-family: 'Roboto Slab', serif;
+        font-size: .8em;
+        font-weight: 400;
+        margin-bottom: .3em;
+        transition: all .4s ease;
+        &:hover {
+            font-weight: 700;
+        }
+    }
+    &__rrss{
+        @include flex (column, wrap, space-between, flex-start);
+        @media screen and (max-width: 1000px){
+            display: none; 
+        }
+    }
+    &__icon {
+        cursor: pointer; 
+        margin-bottom: .5em; 
+        color: var(--gristexto);
+        transition: all 2s ease;
+        &:hover {
+            color: black;
+        }
+    }
+}

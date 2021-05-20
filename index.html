@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackie Books</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/typeface/stylesheet.css">
+    <script defer src="js/jquery-3.6.0.min.js"></script>
+    <script defer src="js/app.js"></script>
+</head>
+<body class="index">
+
+    <header class="header">
+        <div class="header__centrado">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="header__icon" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+              <a href="index.html" class="header__blackie" title="Logo Blackie">
+                <img src="assets/blackieLogo_white.png" alt="Logo de Blackie Books" class="header__logo" loading="lazy">
+           </a>
+           <nav>
+                <ul class="header__menu">
+                    <li class="header__li"><a href="#" class="header__a" title="Libros" rel="noopener noreferrer">Libros</a></li>
+                    <li class="header__li"><a href="#" class="header__a" title="Libros" rel="noopener noreferrer">Autores</a></li>
+                    <li class="header__li"><a href="#" class="header__a" title="Libros" rel="noopener noreferrer">Colecciones</a></li>
+                    <li class="header__li"><a href="#" class="header__a" title="Libros" rel="noopener noreferrer">Eventos Blackie</a></li>
+                    <li><img src="assets/blackieLittle-white.png" alt="Logo de BlackieLittle" class="header__little" loading="lazy"></li>
+                </ul>
+           </nav>
+            <nav class="header__user">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="header__profile__fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="header__cart__fill" viewBox="0 0 16 16">
+                        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+                      </svg>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="slider">
+            <div class="slider__grande">
+                <img loading="lazy" src="assets/banner-00.png" alt="Little" class="slider__img">
+                <img loading="lazy" src="assets/banner-01.png" alt="Colección Richard Brautingan" class="slider__img">
+                <img loading="lazy" src="assets/banner-02.png" alt="El instante mágico" class="slider__img">
+            </div>
+            <div class="slider__pequeno">
+                <img loading="lazy" src="assets/banner-00-m.png" alt="Little" class="slider__img">
+                <img loading="lazy" src="assets/banner-01-m.png" alt="Colección Richard Brautingan" class="slider__img">
+                <img loading="lazy" src="assets/banner-02-m.png" alt="El instante mágico" class="slider__img">
+            </div>
+            <div class="slider__flechas">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="slider__arrow siguiente" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                    </svg>
+        
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="slider__arrow anterior" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                    </svg>
+            </div>
+        </div>
+
+        <div class="search"> 
+            <div class="search__centrado">
+                <form class="search__form">
+                    <input type="text" name="buscador" placeholder="¿Qué libro estás buscando?" maxlength="50">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="search__icon" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                </form>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="grid__centrado">
+                <a class="grid__libro" href="book01.html" title="Grid libro 01">
+                    <img class="grid__img" src="assets/portada-01.png" alt="Tengo un nombre" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Chanel Miller
+                        </h2>
+                        <h3 class="grid__h3">
+                            Tengo un nombre
+                        </h3>
+                        <h4 class="grid__h4">21,90€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </a>
+                <a class="grid__libro" href="book02.html" title="Grid libro 02">
+                        <img class="grid__img" src="assets/portada-02.png" alt="Instrumental" loading="lazy">
+                        <div class="grid__txt">
+                            <h2 class="grid__h2">
+                                James Rhodes
+                            </h2>
+                            <h3 class="grid__h3">
+                                Instrumental
+                            </h3>
+                            <h4 class="grid__h4">19,90€</h4>
+                        </div>
+                        <div class="grid__boton">
+                            <h5 class="grid__reservar">
+                                Reservar
+                            </h5>
+                        </div>
+                </a>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-03.png" alt="Las devoradoras" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Lara Williams
+                        </h2>
+                        <h3 class="grid__h3">
+                            Las devoradoras
+                        </h3>
+                        <h4 class="grid__h4">22,90€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__reservar">
+                            Reservar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-04.png" alt="Matadero cinco" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Kurt Vonnegut
+                        </h2>
+                        <h3 class="grid__h3">
+                            Matadero cinco
+                        </h3>
+                        <h4 class="grid__h4">21,00€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-05.png" alt="Calypso" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            David Sedaris
+                        </h2>
+                        <h3 class="grid__h3">
+                            Calypso
+                        </h3>
+                        <h4 class="grid__h4">21,00€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-06.png" alt="Cuatro Futuros" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Peter Frase
+                        </h2>
+                        <h3 class="grid__h3">
+                            Cuatro Futuros
+                        </h3>
+                        <h4 class="grid__h4">17,90€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-07.png" alt="Muerte con pingüino" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Andrei Kurkov
+                        </h2>
+                        <h3 class="grid__h3">
+                            Muerte con pingüino
+                        </h3>
+                        <h4 class="grid__h4">21,00€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__reservar">
+                            Reservar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-08.png" alt="Los Asquerosos" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Santiago Lorenzo
+                        </h2>
+                        <h3 class="grid__h3">
+                            Los Asquerosos
+                        </h3>
+                        <h4 class="grid__h4">21,00€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-09.png" alt="El instante mágico" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Marcus Chown
+                        </h2>
+                        <h3 class="grid__h3">
+                            El instante mágico
+                        </h3>
+                        <h4 class="grid__h4">23,00€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__reservar">
+                            Reservar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-10.png" alt="Little" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Edward Carey
+                        </h2>
+                        <h3 class="grid__h3">
+                            Little
+                        </h3>
+                        <h4 class="grid__h4">23,90€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-11.png" alt="El libro de la Luna" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Fatoumata Kébé
+                        </h2>
+                        <h3 class="grid__h3">
+                            El libro de la Luna
+                        </h3>
+                        <h4 class="grid__h4">17,90€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-12.png" alt="El cielo de medianoche" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Lily Brooks-Dalton
+                        </h2>
+                        <h3 class="grid__h3">
+                            El cielo de medianoche
+                        </h3>
+                        <h4 class="grid__h4">21,00€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-13.png" alt="Vozdevieja" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Elisa Victoria
+                        </h2>
+                        <h3 class="grid__h3">
+                            Vozdevieja
+                        </h3>
+                        <h4 class="grid__h4">19,00€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-14.png" alt="Los huerfanitos" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Santiago Lorenzo
+                        </h2>
+                        <h3 class="grid__h3">
+                            Los huerfanitos
+                        </h3>
+                        <h4 class="grid__h4">12,90€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-15.png" alt="Diario de sueños" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Comité Blackie Books
+                        </h2>
+                        <h3 class="grid__h3">
+                            Diario de sueños
+                        </h3>
+                        <h4 class="grid__h4">19,90€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+                <div class="grid__libro">
+                    <img class="grid__img" src="assets/portada-16.png" alt="Reina del grito" loading="lazy">
+                    <div class="grid__txt">
+                        <h2 class="grid__h2">
+                            Desirée de Fez
+                        </h2>
+                        <h3 class="grid__h3">
+                            Reina del grito
+                        </h3>
+                        <h4 class="grid__h4">18,90€</h4>
+                    </div>
+                    <div class="grid__boton">
+                        <h5 class="grid__comprar">
+                            Comprar
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="eventos">
+            <div class="eventos__centrados">
+                <div class="eventos__titulo">
+                    <img class="eventos__title" src="assets/blackie-eventos.svg" alt="Eventos Blackie" loading="lazy">
+                </div>
+                <div class="eventos__cards">
+                    <div class="eventos__evento">
+                        <img class="eventos__img" src="assets/evento-01.jpg" alt="Concurs literari i taller de narrativa" loading="lazy">
+                        <div class="eventos__txt">
+                            <h2 class="eventos__h2">
+                                Concurs literari i taller de narrativa: Històries del Raval
+                            </h2>
+                            <div class="eventos__fecha">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                                <h3 class="eventos__h3">
+                                    17 de mayo de 2021
+                                </h3>
+                            </div>
+                            <div class="eventos__direccion">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                  </svg>
+                                    <h3 class="eventos__h3">
+                                        La Ciutat Invisible, Barcelona
+                                    </h3>
+                            </div>
+                            <div class="eventos__descripcion">
+                                <h4 class="eventos__h4">Sobre el evento</h4>
+                                <h3 class="eventos__h3">
+                                    Tens entre 15 i 18 anys i vius o estudies al Raval? Participa!  Si tens una història, tens una història per explicar. 1. Us convidem a participar en el 2n Concurs literari i taller de narrativa Històries del Raval 2021, de la mà dels escriptors Juan Pablo Villalobos i Miqui Otero, la llibreria La Central
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eventos__evento">
+                        <img class="eventos__img" src="assets/evento-02.jpg" alt="Miqui Otero presenta «Simón» a Nou Barris" loading="lazy">
+                        <div class="eventos__txt">
+                            <h2 class="eventos__h2">
+                                Miqui Otero presenta «Simón» a Nou Barris
+                            </h2>
+                            <div class="eventos__fecha">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                                <h3 class="eventos__h3">
+                                    20 de mayo de 2021
+                                </h3>
+                            </div>
+                            <div class="eventos__direccion">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                  </svg>
+                                    <h3 class="eventos__h3">
+                                        Plaça Major de Nou Barris, Barcelona
+                                    </h3>
+                            </div>
+                            <div class="eventos__descripcion">
+                                <h4 class="eventos__h4">Sobre el evento</h4>
+                                <h3 class="eventos__h3">
+                                    Miqui Otero i Anna Pacheco us esperen a la Plaça Major de Nou Barris per xerrar de la darrera novel·la de l'escriptor: Simón. Serà un acte a l'aire lliure el dijous 20 de maig a partir de dos quarts de set del vespre. És un acte organitzat per les Biblioteques de Barcelona en col·laboració amb
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eventos__evento">
+                        <img class="eventos__img" src="assets/evento-03.jpg" alt="Taller virtual con Marta Altés y Oletvm" loading="lazy">
+                        <div class="eventos__txt">
+                            <h2 class="eventos__h2">
+                                Taller virtual con Marta Altés y Oletvm
+                            </h2>
+                            <div class="eventos__fecha">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                                <h3 class="eventos__h3">
+                                    28 de mayo de 2021
+                                </h3>
+                            </div>
+                            <div class="eventos__direccion">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                  </svg>
+                                    <h3 class="eventos__h3">
+                                        Librería Oletvm Junior, Valladolid
+                                    </h3>
+                            </div>
+                            <div class="eventos__descripcion">
+                                <h4 class="eventos__h4">Sobre el evento</h4>
+                                <h3 class="eventos__h3">
+                                    La librería Oletvm Junior ha organizado un divertido taller virtual con Marta Altés y su libro más reciente: Nuevo en la ciudad. Será por vía de la plataforma ZOOM, el viernes 28 de mayo a las 18 horas. Es necesario reservar la plaza en esta dirección de correo electrónico: oletvm@oletvm.com. ¡No os lo perdáis!
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eventos__evento">
+                        <img class="eventos__img" src="assets/evento-04.jpg" alt="Elisa Victoria presenta «El Evangelio» en Iruña" loading="lazy">
+                        <div class="eventos__txt">
+                            <h2 class="eventos__h2">
+                                Elisa Victoria presenta «El Evangelio» en Iruña
+                            </h2>
+                            <div class="eventos__fecha">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                                <h3 class="eventos__h3">
+                                    29 de mayo de 2021
+                                </h3>
+                            </div>
+                            <div class="eventos__direccion">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                  </svg>
+                                    <h3 class="eventos__h3">
+                                        Feria del Libro de Iruña, Iruña
+                                    </h3>
+                            </div>
+                            <div class="eventos__descripcion">
+                                <h4 class="eventos__h4">Sobre el evento</h4>
+                                <h3 class="eventos__h3">
+                                    Dentro de la programación de la Feria del Libro de Iruña, Elisa Victoria presentará El Evangelio acompañada de Nerea Madariaga. Será el sábado 29 de mayo en la Plaza del Castillo de Iruña, a las 19 horas. La organización recomienda reservar la asistencia con antelación a través de esta dirección de
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eventos__evento">
+                        <img class="eventos__img" src="assets/evento-05.jpg" alt="«Al final siempre ganan los monstruos» en Barcelona" loading="lazy">
+                        <div class="eventos__txt">
+                            <h2 class="eventos__h2">
+                                 «Al final siempre ganan los monstruos» en Barcelona
+                            </h2>
+                            <div class="eventos__fecha">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                                <h3 class="eventos__h3">
+                                    02 de junio de 2021
+                                </h3>
+                            </div>
+                            <div class="eventos__direccion">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                  </svg>
+                                    <h3 class="eventos__h3">
+                                        La Ciutat Invisible, Barcelona
+                                    </h3>
+                            </div>
+                            <div class="eventos__descripcion">
+                                <h4 class="eventos__h4">Sobre el evento</h4>
+                                <h3 class="eventos__h3">
+                                    Juarma arriba per fi a Barcelona per presentar Al final siempre ganan los monstruos. El dia 2 de juny a les 19 hores us espera al pati de La Ciutat Invisible, al barri de Sants, amb l'editora Rebeca González i el periodista Eudald Espluga. La cabuda és limitada, reserveu la vostra plaça per bestreta
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eventos__evento">
+                        <img class="eventos__img" src="assets/evento-06.jpg" alt="Elisa Victoria presenta «El Evangelio» a Palma" loading="lazy">
+                        <div class="eventos__txt">
+                            <h2 class="eventos__h2">
+                                Elisa Victoria presenta «El Evangelio» a Palma
+                            </h2>
+                            <div class="eventos__fecha">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                                <h3 class="eventos__h3">
+                                    17 de junio de 2021
+                                </h3>
+                            </div>
+                            <div class="eventos__direccion">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="eventos__icon" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                  </svg>
+                                    <h3 class="eventos__h3">
+                                        Cinema Rívoli, Palma de Mallorca
+                                    </h3>
+                            </div>
+                            <div class="eventos__descripcion">
+                                <h4 class="eventos__h4">Sobre el evento</h4>
+                                <h3 class="eventos__h3">
+                                    La llibreria Rata Corner ha convidat l'Elisa Victoria a presentar la seva darrera novel·la, El Evangelio, a Palma. Serà el 17 de juny al Cinema Rívoli a les 7 del vespre. Marta Pèrez acompanyarà l'autora durant l'acte. La cabuda és limitada, cal que reserveu la vostra plaça al web de la llibreria:
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="suscribete">
+            <section class="suscribete__centrado">
+                <img class="suscribete__img" src="assets/blackie-suscribe.svg" alt="Casa Blackie" loading="lazy"> 
+                <h3 class="suscribete__h3">
+                    Casa Blackie es el hogar de todos los lectores y lectoras.
+                    Completa el registro y podrás participar en todas las actividades que vayamos organizando, recibirás promociones y estarás al tanto de todas las novedades.
+                </h3>
+                <button class="suscribete__boton">
+                    ¡Suscríbete!
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__centrado">
+            <div class="footer__location">
+                <img src="assets/blackieLogo_relleno.png" alt="Logo de Blackie Books" class="footer__logo" loading="lazy">
+                <div class="footer__direction">
+                    <h3 class="footer__h3">
+                        Blackie Books</h3>
+                    <h4 class="footer__h4">Esglèsia 4-10, 4º</h4>
+                    <h4 class="footer__h4">08024 - Barcelona</h4>
+                    <h3 class="footer__h3">
+                    +34 934160959</h3>
+                </div>
+            </div>
+            <div class="footer__services">
+                <a href="#" class="footer__a" title="Nosotros"><h5 class="footer__h5">Nosotros</h5></a>
+                <a href="#" class="footer__a" title="Aviso legal"><h5 class="footer__h5">Aviso legal</h5></a>
+                <a href="#" class="footer__a" title="Política de privacidad"><h5 class="footer__h5">Política de privacidad</h5></a>
+                <a href="#" class="footer__a" title="Términos y condiciones"><h5 class="footer__h5">Términos y condiciones</h5></a>
+            </div>
+            <div class="footer__services">
+                <a href="#" class="footer__a" title="Distribución de Ebooks"><h5 class="footer__h5">Distribución de Ebooks</h5></a>
+                <a href="#" class="footer__a" title="Empleo"><h5 class="footer__h5">Empleo</h5></a>
+                <a href="#" class="footer__a" title="¿Eres maquetador?"><h5 class="footer__h5">¿Eres maquetador?</h5></a>
+                <a href="#" class="footer__a" title="¿Eres diseñador?"><h5 class="footer__h5">¿Eres diseñador?</h5></a>
+            </div>
+            <div class="footer__services">
+                <a href="#" class="footer__a" title="Catálogo"><h5 class="footer__h5">Catálogo</h5></a>
+                <a href="#" class="footer__a" title="Distribución"><h5 class="footer__h5">Distribución</h5></a>
+                <a href="#" class="footer__a" title="Contacto"><h5 class="footer__h5">Contacto</h5></a>
+                <a href="#" class="footer__a" title="Autores"><h5 class="footer__h5">Autores</h5></a>
+            </div>
+
+            <div class="footer__rrss">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="footer__icon" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="footer__icon" viewBox="0 0 16 16">
+                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="footer__icon" viewBox="0 0 16 16">
+                    <path d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0H3.857zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142v6.286z"/>
+                    <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z"/>
+                  </svg>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>

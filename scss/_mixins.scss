@@ -1,0 +1,7 @@
+// Mixins
+@mixin flex( $direccion , $cortar , $just , $align){
+    display         : flex;
+    flex-flow       : $direccion $cortar;
+    justify-content : $just;
+    align-items     : $align;
+  }
