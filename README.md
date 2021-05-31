@@ -8,6 +8,7 @@ Pequeño proyecto para el módulo de Desarrollo Web en Trazos. He realizado un r
 
 * [LinkedIn](https://www.linkedin.com/in/ana-plou/)
 * [Behance](https://www.behance.net/anaplou)
+* [Porfolio web](https://anaplou.es/)
 
 ## Ver ejemplo en vivo 
 - [https://anaplou.github.io/blackiebooks-rebranding/](https://anaplou.github.io/blackiebooks-rebranding/)
