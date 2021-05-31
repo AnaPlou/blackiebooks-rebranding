@@ -10,7 +10,6 @@ Pequeño proyecto para el módulo de Desarrollo Web en Trazos. He realizado un r
 * [Behance](https://www.behance.net/anaplou)
 
 ## Ver ejemplo en vivo 
-https://anaplou.github.io/blackiebooks-rebranding/
 - [https://anaplou.github.io/blackiebooks-rebranding/](https://anaplou.github.io/blackiebooks-rebranding/)
 
 ## Instalación 
